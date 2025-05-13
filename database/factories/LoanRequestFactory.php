@@ -18,7 +18,7 @@ class LoanRequestFactory extends Factory
     {
         return [
             'requested_amount' => fake()->randomDigit(),
-            'requested_at' => now(),
+            'requested_at'     => now(),
         ];
     }
 }

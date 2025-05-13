@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ingredient;
 use App\Models\LoanRequest;
 use Illuminate\Database\Seeder;
 

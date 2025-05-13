@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn() => [
     'current_api_version' => 'v' . config('app.api_latest'),
-    'name' => 'API',
-    'status' => 'OK2',
+    'name'                => 'API',
+    'status'              => 'OK2',
 ])->name('api.index');

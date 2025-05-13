@@ -1,0 +1,97 @@
+{
+    "preset": "per",
+    "rules": {
+        "simplified_null_return": true,
+        "void_return": true,
+        "fully_qualified_strict_types": {
+            "import_symbols": true
+        },
+        "compact_nullable_typehint": true,
+        "cast_spaces": {
+            "space": "single"
+        },
+        "not_operator_with_successor_space": true,
+        "no_unused_imports": true,
+        "no_useless_else": true,
+        "no_useless_return": true,
+        "ordered_traits": {
+            "case_sensitive": false
+        },
+        "ordered_interfaces": {
+            "order": "alpha",
+            "direction": "ascend",
+            "case_sensitive": false
+        },
+        "return_assignment": true,
+        "array_indentation": true,
+        "trailing_comma_in_multiline": {
+            "after_heredoc": false,
+            "elements": [
+                "arguments",
+                "arrays",
+                "match",
+                "parameters"
+            ]
+        },
+        "method_chaining_indentation": true,
+        "binary_operator_spaces": {
+            "default": "single_space",
+            "operators": {
+                "=>": "align_single_space_minimal"
+            }
+        },
+        "strict_comparison": true,
+        "standardize_not_equals": true,
+        "strict_param": true,
+        "static_lambda": false,
+        "single_quote": {
+            "strings_containing_single_quote_chars": false
+        },
+        "function_to_constant": {
+            "functions": [
+                "get_called_class",
+                "get_class",
+                "get_class_this",
+                "php_sapi_name",
+                "phpversion",
+                "pi"
+            ]
+        },
+        "simplified_if_return": true,
+        "function_declaration": {
+            "closure_fn_spacing": "none",
+            "closure_function_spacing": "one",
+            "trailing_comma_single_line": false
+        },
+        "single_import_per_statement": {
+            "group_to_single_imports": false
+        },
+        "yoda_style": {
+            "always_move_variable": false,
+            "equal": false,
+            "identical": false,
+            "less_and_greater": null
+        },
+        "use_arrow_functions": true,
+        "single_line_empty_body": true,
+        "return_type_declaration": {
+            "space_before": "none"
+        },
+        "new_with_parentheses": {
+            "named_class": true,
+            "anonymous_class": false
+        },
+        "braces_position": {
+            "anonymous_classes_opening_brace": "same_line"
+        },
+        "concat_space": {
+            "spacing": "one"
+        },
+        "ordered_imports": {
+            "sort_algorithm": "alpha"
+        },
+        "array_syntax": {
+            "syntax": "short"
+        }
+    }
+}

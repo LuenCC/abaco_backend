@@ -27,5 +27,3 @@ class LoanRequestRequest extends FormRequest
         ];
     }
 }
-
-
