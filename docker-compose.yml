@@ -1,0 +1,63 @@
+services:
+  # Backend Laravel Service
+  be_loan_management:
+    container_name: be_loan
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
+    env_file:
+      - .env
+    ports:
+      - '8001:8000'
+    depends_on:
+      - redis
+      - mysql
+    networks:
+      - be_loan_network
+
+  # Redis Service for Queues
+  redis:
+    image: redis:alpine
+    container_name: loan_redis
+    restart: unless-stopped
+    ports:
+      - '6380:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - be_loan_network
+    command: redis-server --appendonly yes
+  # MySQL Service for Database
+  mysql:
+    image: 'mysql/mysql-server:8.0'
+    container_name: loan_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - '3307:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - be_loan_network
+
+networks:
+  be_loan_network:
+    name: be_loan_network
+    driver: bridge
+
+volumes:
+  mysql_data:
+    name: mysql_data
+    driver: local
+  redis_data:
+    name: redis_data
+    driver: local
